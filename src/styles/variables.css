@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #2563EB;
+  --secondary-color: #4F46E5;
+  --success-color: #22C55E;
+  --warning-color: #F59E0B;
+  --danger-color: #EF4444;
+  
+  /* Light Theme Variables */
+  --bg-app: #F8FAFC;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-card-opaque: #FFFFFF;
+  --bg-sidebar: rgba(255, 255, 255, 0.85);
+  --border-glass: rgba(226, 232, 240, 0.8);
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(12px);
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Overrides */
+  --bg-app: #090D16;
+  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-card-opaque: #0F172A;
+  --bg-sidebar: rgba(11, 17, 32, 0.8);
+  --border-glass: rgba(255, 255, 255, 0.07);
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --glass-blur: blur(16px);
+}
