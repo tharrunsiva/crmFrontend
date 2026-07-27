@@ -22,6 +22,6 @@ export const getPayrollAdmin = async (filters) => {
 
 export const downloadPayslipUrl = (id) => {
   const token = localStorage.getItem('token');
-  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com/api';
   return `${baseUrl}/payroll/${id}/download?token=${token}`;
 };

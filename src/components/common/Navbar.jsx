@@ -113,7 +113,7 @@ const Navbar = ({ pageTitle = 'Dashboard' }) => {
         <div className="d-flex align-items-center gap-2 border-start border-glass ps-3">
           {user?.profilePhoto ? (
             <img
-              src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
+              src={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
               alt="Profile"
               className="rounded-circle object-fit-cover"
               style={{ width: '36px', height: '36px', border: '2px solid var(--border-glass)' }}
