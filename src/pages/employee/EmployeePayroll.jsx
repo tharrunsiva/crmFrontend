@@ -4,6 +4,7 @@ import { getMyPayrollHistory, downloadPayslipUrl } from '../../services/payrollS
 import { Table, Button, Badge } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { API_URL } from '../../config.js';
 
 const EmployeePayroll = () => {
   const [history, setHistory] = useState([]);
@@ -30,7 +31,7 @@ const EmployeePayroll = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios({
-        url: `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/payroll/${id}/download`,
+        url: `${API_URL}/payroll/${id}/download`,
         method: 'GET',
         responseType: 'blob', // Important
         headers: {

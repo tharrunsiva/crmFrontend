@@ -8,6 +8,7 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { Form, Button, Badge } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from '../config.js';
 
 import CompanyLogo from '../components/common/CompanyLogo.jsx';
 
@@ -330,7 +331,7 @@ const IDCardPage = () => {
                     <div className="id-photo-container">
                       {cardData.profilePhoto ? (
                         <img
-                          src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${cardData.profilePhoto}`}
+                          src={`${BACKEND_URL}${cardData.profilePhoto}`}
                           alt="Photo"
                           className="id-photo-img"
                         />

@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { API_URL } from '../config.js';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://crmbackend-nq36.onrender.com/api' ,
-  timeout: 15000,
+  baseURL: API_URL,
+  timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
   },

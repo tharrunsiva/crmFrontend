@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 import { motion } from 'framer-motion';
 import CompanyLogo from './CompanyLogo.jsx';
+import { BACKEND_URL } from '../../config.js';
 
 const Sidebar = () => {
   const { user, logout } = useAuth();
@@ -69,7 +70,7 @@ const Sidebar = () => {
         <div className="d-flex align-items-center gap-3">
           {user?.profilePhoto ? (
             <img
-              src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
+              src={`${BACKEND_URL}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
               alt="Profile"
               className="rounded-circle object-fit-cover"
               style={{ width: '44px', height: '44px', border: '2px solid var(--border-glass)' }}

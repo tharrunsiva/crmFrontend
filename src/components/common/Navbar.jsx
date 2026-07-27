@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext.jsx';
 import { useNotifications } from '../../context/NotificationContext.jsx';
 import { Dropdown } from 'react-bootstrap';
 import CompanyLogo from './CompanyLogo.jsx';
+import { BACKEND_URL } from '../../config.js';
 
 const Navbar = ({ pageTitle = 'Dashboard' }) => {
   const { user } = useAuth();
@@ -113,7 +114,7 @@ const Navbar = ({ pageTitle = 'Dashboard' }) => {
         <div className="d-flex align-items-center gap-2 border-start border-glass ps-3">
           {user?.profilePhoto ? (
             <img
-              src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
+              src={`${BACKEND_URL}${user.profilePhoto.startsWith('/') ? '' : '/'}${user.profilePhoto}`}
               alt="Profile"
               className="rounded-circle object-fit-cover"
               style={{ width: '36px', height: '36px', border: '2px solid var(--border-glass)' }}

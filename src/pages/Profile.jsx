@@ -4,6 +4,7 @@ import { getMyProfile, updateMyProfile } from '../services/profileService.js';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Button, Form, ProgressBar } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from '../config.js';
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -103,7 +104,7 @@ const Profile = () => {
           <Col sm={4} className="text-center mt-3 mt-sm-0">
             {profile.documents?.profilePhoto ? (
               <img
-                src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
+                src={`${BACKEND_URL}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
                 alt="Avatar"
                 className="shadow"
                 style={{ width: '130px', height: '130px', objectFit: 'cover', border: '1.5px solid #000000', borderRadius: '14px' }}
@@ -227,7 +228,7 @@ const Profile = () => {
                   <strong className="text-muted d-block small">Resume / CV</strong>
                   {profile.documents?.resume ? (
                     <a
-                      href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.resume}`}
+                      href={`${BACKEND_URL}${profile.documents.resume}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary text-decoration-none font-weight-medium d-inline-flex align-items-center gap-1 mt-1"
@@ -242,7 +243,7 @@ const Profile = () => {
                   <strong className="text-muted d-block small">Aadhar Card</strong>
                   {profile.documents?.aadhar ? (
                     <a
-                      href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.aadhar}`}
+                      href={`${BACKEND_URL}${profile.documents.aadhar}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary text-decoration-none font-weight-medium d-inline-flex align-items-center gap-1 mt-1"
@@ -257,7 +258,7 @@ const Profile = () => {
                   <strong className="text-muted d-block small">PAN Card</strong>
                   {profile.documents?.pan ? (
                     <a
-                      href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.pan}`}
+                      href={`${BACKEND_URL}${profile.documents.pan}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary text-decoration-none font-weight-medium d-inline-flex align-items-center gap-1 mt-1"

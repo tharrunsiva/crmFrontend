@@ -3,6 +3,7 @@ import Navbar from '../../components/common/Navbar.jsx';
 import { submitComplaint, getMyComplaints, replyToComplaint, updateComplaintStatus } from '../../services/complaintService.js';
 import { Table, Button, Badge, Modal, Form, Row, Col } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from '../../config.js';
 
 const EmployeeComplaints = () => {
   const [complaints, setComplaints] = useState([]);
@@ -263,7 +264,7 @@ const EmployeeComplaints = () => {
               {activeTicket.attachment && (
                 <div className="mt-2">
                   <a
-                    href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${activeTicket.attachment}`}
+                    href={`${BACKEND_URL}${activeTicket.attachment}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-outline-primary btn-sm rounded-pill px-3 mt-1"

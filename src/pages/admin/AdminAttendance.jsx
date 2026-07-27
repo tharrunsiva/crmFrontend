@@ -9,6 +9,7 @@ import {
 } from '../../services/adminService.js';
 import { Table, Form, Button, Row, Col, Badge, Modal, Card } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from '../../config.js';
 import { jsPDF } from 'jspdf';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
@@ -598,7 +599,7 @@ const AdminAttendance = () => {
                       <div className="d-flex align-items-center gap-3">
                         {rec.user?.documents?.profilePhoto ? (
                           <img
-                            src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${rec.user.documents.profilePhoto.startsWith('/') ? '' : '/'}${rec.user.documents.profilePhoto}`}
+                            src={`${BACKEND_URL}${rec.user.documents.profilePhoto.startsWith('/') ? '' : '/'}${rec.user.documents.profilePhoto}`}
                             alt="Photo"
                             className="rounded-circle shadow-sm"
                             style={{ width: '36px', height: '36px', objectFit: 'cover', border: '1.5px solid var(--primary-color)' }}

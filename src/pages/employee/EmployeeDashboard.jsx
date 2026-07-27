@@ -9,6 +9,7 @@ import { getMyComplaints } from '../../services/complaintService.js';
 import { getMyProfile } from '../../services/profileService.js';
 import { Card, Table, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { BACKEND_URL } from '../../config.js';
 
 const EmployeeDashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -94,7 +95,7 @@ const EmployeeDashboard = () => {
             <div>
               {profile.documents?.profilePhoto ? (
                 <img
-                  src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
+                  src={`${BACKEND_URL}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
                   alt="Profile Avatar"
                   className="shadow"
                   style={{ width: '140px', height: '140px', objectFit: 'cover', border: '1.5px solid #000000', borderRadius: '16px' }}

@@ -1,4 +1,5 @@
 import api from './api.js';
+import { API_URL } from '../config.js';
 
 export const generatePayroll = async (payrollData) => {
   const { data } = await api.post('/payroll/generate', payrollData);
@@ -7,6 +8,16 @@ export const generatePayroll = async (payrollData) => {
 
 export const approvePayroll = async (id, status) => {
   const { data } = await api.put(`/payroll/${id}/approve`, { status });
+  return data;
+};
+
+export const getPayrollRecords = async (params) => {
+  const { data } = await api.get('/payroll/records', { params });
+  return data;
+};
+
+export const getMyPayroll = async () => {
+  const { data } = await api.get('/payroll/my');
   return data;
 };
 
@@ -22,6 +33,5 @@ export const getPayrollAdmin = async (filters) => {
 
 export const downloadPayslipUrl = (id) => {
   const token = localStorage.getItem('token');
-  const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-  return `${baseUrl}/payroll/${id}/download?token=${token}`;
+  return `${API_URL}/payroll/${id}/download?token=${token}`;
 };

@@ -8,6 +8,7 @@ import { getAdminDashboardAnalytics, approveRejectEmployee, getEmployeeById, get
 import { Table, Button, Badge, Modal, Row, Col, Form, Tabs, Tab } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { BACKEND_URL } from '../../config.js';
 
 const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -260,7 +261,7 @@ const AdminDashboard = () => {
                   <Col sm={4} className="text-center py-3 border-end border-glass">
                     {selectedEmp.profile?.documents?.profilePhoto ? (
                       <img
-                        src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${selectedEmp.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmp.profile.documents.profilePhoto}`}
+                        src={`${BACKEND_URL}${selectedEmp.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmp.profile.documents.profilePhoto}`}
                         alt="Profile Photo"
                         className="rounded-circle mb-3 shadow"
                         style={{ width: '120px', height: '120px', objectFit: 'cover', border: '3px solid var(--primary-color)' }}
@@ -364,7 +365,7 @@ const AdminDashboard = () => {
                         </div>
                         <div>
                           <a
-                            href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${doc.path}`}
+                            href={`${BACKEND_URL}${doc.path}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-outline-primary btn-sm rounded-pill px-3"

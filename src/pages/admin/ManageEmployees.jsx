@@ -11,6 +11,7 @@ import {
 } from '../../services/adminService.js';
 import { Table, Form, Button, Row, Col, Badge, Modal, Tabs, Tab } from 'react-bootstrap';
 import toast from 'react-hot-toast';
+import { BACKEND_URL } from '../../config.js';
 
 const ManageEmployees = () => {
   const navigate = useNavigate();
@@ -307,7 +308,7 @@ const ManageEmployees = () => {
                       <div className="d-flex align-items-center gap-3">
                         {emp.documents?.profilePhoto ? (
                           <img
-                            src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${emp.documents.profilePhoto.startsWith('/') ? '' : '/'}${emp.documents.profilePhoto}`}
+                            src={`${BACKEND_URL}${emp.documents.profilePhoto.startsWith('/') ? '' : '/'}${emp.documents.profilePhoto}`}
                             alt="Avatar"
                             className="rounded-circle shadow-sm"
                             style={{ width: '36px', height: '36px', objectFit: 'cover', border: '1.5px solid var(--primary-color)' }}
@@ -416,7 +417,7 @@ const ManageEmployees = () => {
                   <Col sm={4} className="text-center py-3 border-end border-glass">
                     {selectedEmployeeData.profile?.documents?.profilePhoto ? (
                       <img
-                        src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${selectedEmployeeData.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmployeeData.profile.documents.profilePhoto}`}
+                        src={`${BACKEND_URL}${selectedEmployeeData.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmployeeData.profile.documents.profilePhoto}`}
                         alt="Profile Photo"
                         className="mb-3 shadow"
                         style={{ width: '130px', height: '155px', objectFit: 'cover', border: '1.5px solid #000000', borderRadius: '16px' }}
@@ -536,7 +537,7 @@ const ManageEmployees = () => {
                         </div>
                         <div className="d-inline-flex gap-2">
                           <a
-                            href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${doc.path}`}
+                            href={`${BACKEND_URL}${doc.path}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-outline-primary btn-sm rounded-pill px-3"
