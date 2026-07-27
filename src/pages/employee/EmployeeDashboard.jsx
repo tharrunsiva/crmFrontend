@@ -94,7 +94,7 @@ const EmployeeDashboard = () => {
             <div>
               {profile.documents?.profilePhoto ? (
                 <img
-                  src={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
+                  src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${profile.documents.profilePhoto}`}
                   alt="Profile Avatar"
                   className="shadow"
                   style={{ width: '140px', height: '140px', objectFit: 'cover', border: '1.5px solid #000000', borderRadius: '16px' }}

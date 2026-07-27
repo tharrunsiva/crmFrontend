@@ -30,7 +30,7 @@ const EmployeePayroll = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios({
-        url: `${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com/api'}/payroll/${id}/download`,
+        url: `${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}/payroll/${id}/download`,
         method: 'GET',
         responseType: 'blob', // Important
         headers: {

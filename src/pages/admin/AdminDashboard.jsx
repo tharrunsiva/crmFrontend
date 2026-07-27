@@ -260,7 +260,7 @@ const AdminDashboard = () => {
                   <Col sm={4} className="text-center py-3 border-end border-glass">
                     {selectedEmp.profile?.documents?.profilePhoto ? (
                       <img
-                        src={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${selectedEmp.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmp.profile.documents.profilePhoto}`}
+                        src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${selectedEmp.profile.documents.profilePhoto.startsWith('/') ? '' : '/'}${selectedEmp.profile.documents.profilePhoto}`}
                         alt="Profile Photo"
                         className="rounded-circle mb-3 shadow"
                         style={{ width: '120px', height: '120px', objectFit: 'cover', border: '3px solid var(--primary-color)' }}
@@ -364,7 +364,7 @@ const AdminDashboard = () => {
                         </div>
                         <div>
                           <a
-                            href={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${doc.path}`}
+                            href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${doc.path}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-outline-primary btn-sm rounded-pill px-3"

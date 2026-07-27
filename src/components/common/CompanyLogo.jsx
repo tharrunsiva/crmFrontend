@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const CompanyLogo = ({ height = 32, theme = 'dark' }) => {
   const [hasError, setHasError] = useState(false);
-  const logoUrl = `${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}/uploads/logo.png`;
+  const logoUrl = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/uploads/logo.png`;
   
   if (hasError) {
     const textColor = theme === 'light' ? '#0F172A' : '#FFFFFF';

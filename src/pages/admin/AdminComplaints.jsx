@@ -220,7 +220,7 @@ const AdminComplaints = () => {
               {activeTicket.attachment && (
                 <div className="mt-2">
                   <a
-                    href={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${activeTicket.attachment}`}
+                    href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${activeTicket.attachment}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-outline-primary btn-sm rounded-pill px-3 mt-1"

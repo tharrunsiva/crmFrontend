@@ -330,7 +330,7 @@ const IDCardPage = () => {
                     <div className="id-photo-container">
                       {cardData.profilePhoto ? (
                         <img
-                          src={`${import.meta.env.VITE_API_URL || 'http://localhost:https://crmbackend-nq36.onrender.com'}${cardData.profilePhoto}`}
+                          src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${cardData.profilePhoto}`}
                           alt="Photo"
                           className="id-photo-img"
                         />
